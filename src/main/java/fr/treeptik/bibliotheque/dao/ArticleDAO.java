@@ -5,7 +5,7 @@ import java.util.List;
 
 import fr.treeptik.bibliotheque.exception.DAOException;
 import fr.treeptik.bibliotheque.pojo.Article;
-
+//
 public interface ArticleDAO
 {
 	Article save(Article article) throws DAOException;
