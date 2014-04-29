@@ -1,0 +1,9 @@
+# Database infos
+dbDriver = com.mysql.jdbc.Driver
+dbUrl = jdbc:mysql://localhost:3306/bibliotheque
+dbUser = root
+dbPassword = root
+
+# mode {file,db}
+daoMode = db
+igoirg

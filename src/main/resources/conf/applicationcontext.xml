@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/aop
+	   http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!--  Debut de la configuration AOP -->
+
+	<aop:aspectj-autoproxy/>
+
+<!--  Fin de la configuration AOP -->
+	   
+<!--  Debut de la configuration DAO -->
+
+	<context:annotation-config/>
+	<context:property-placeholder location="src/main/resources/conf/conf.properties"/>
+	<context:component-scan base-package="fr.treeptik.bibliotheque"/>
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${dbDriver}"/>
+		<property name="url" value="${dbUrl}"/>
+		<property name="username" value="${dbUser}"/>
+		<property name="password" value="${dbPassword}"/>
+	</bean>
+	
+<!--  Fin de la configuration DAO -->
+
+<!--  Debut de la configuration i18n -->
+
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="i18n/messages"/>
+	</bean>
+
+<!--  Fin de la configuration i18n -->
+
+</beans>
