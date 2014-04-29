@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component("serviceOperationTracer")
 public class ServiceOperationTracer
 {
+	//
 	@Before("execution(* fr.treeptik.bibliotheque.service.*.*(..))")
 	public void logBefore(JoinPoint joinPoint)
 	{
